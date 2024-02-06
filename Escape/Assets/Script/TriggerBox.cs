@@ -54,6 +54,7 @@ public class TriggerBox : MonoBehaviour
             case "cléGauche":
                 col.transform.position = new Vector3(-17.3f, 10.15f, -30);
                 break;
+            
             default:
                 break;
                 

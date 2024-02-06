@@ -12,6 +12,8 @@ TagManager:
   - "cl\xE9Mort"
   - "cl\xE9Droite"
   - "cl\xE9Gauche"
+  - cable
+  - cableMauvais
   layers:
   - Default
   - TransparentFX
