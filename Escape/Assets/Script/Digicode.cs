@@ -7,20 +7,6 @@ using UnityEngine.UI;
 
 public class Digicode : MonoBehaviour
 {
-    [Header("Boutons du digicode")] 
-    public Button bout1;
-    public Button bout2;
-    public Button bout3;
-    public Button bout4;
-    public Button bout5;
-    public Button bout6;
-    public Button bout7;
-    public Button bout8;
-    public Button bout9;
-    public Button bout0;
-
-    public Button Erase;
-
     public int nbEssai = 0;
 
     private string Serie = "";
@@ -30,7 +16,7 @@ public class Digicode : MonoBehaviour
     public GameObject panneauLettre;
     public GameObject panneauDigicode;
 
-    private void Update()
+    private void UpdateText()
     {
         visible.text = Serie;
     }
@@ -48,42 +34,33 @@ public class Digicode : MonoBehaviour
         }
     }
 
-    public void Ajout1()
+    public void AjoutNombre(int nombre)
     {
-        Serie += "1";
+        if (nombre > 9)
+        {
+            switch (nombre)
+            {
+                case 10 :
+                    Verif();
+                    break;
+                case 11 :
+                    EraseFunc();
+                    break;
+            }
+        }
+        else
+        {
+            Serie += nombre.ToString();
+            if (Serie.Length > 3)
+            {
+                Verif();
+            }
+        }
+        UpdateText();
     }
-    public void Ajout2()
-    {
-        Serie += "2";
-    }public void Ajout3()
-    {
-        Serie += "3";
-    }public void Ajout4()
-    {
-        Serie += "4";
-    }public void Ajout6()
-    {
-        Serie += "6";
-    }public void Ajout7()
-    {
-        Serie += "7";
-    }public void Ajout8()
-    {
-        Serie += "8";
-    }public void Ajout9()
-    {
-        Serie += "9";
-    }public void Ajout0()
-    {
-        Serie += "0";
-    }public void Ajout5()
-    {
-        Serie += "5";
-    }
-
-
     public void EraseFunc()
     {
         Serie = "";
     }
+
 }
