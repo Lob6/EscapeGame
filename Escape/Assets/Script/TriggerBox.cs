@@ -9,8 +9,9 @@ public class TriggerBox : MonoBehaviour
     public Transform ordi;
     public GameObject perso;
     public GameObject livreOuvert;
-    public GameObject livreFerme;
+    public Transform livreFerme;
     public Transform PanneauCles;
+    public GameObject TexteLivre;
     
     
     
@@ -40,7 +41,8 @@ public class TriggerBox : MonoBehaviour
                 break;
             case "livre":
                 livreOuvert.SetActive(true);
-                livreFerme.SetActive(false);
+                livreFerme.gameObject.SetActive(false);
+                TexteLivre.SetActive(false);
                 break;
             case "clé":
                 col.transform.position = new Vector3(-18.1f, 10.15f, -30);
