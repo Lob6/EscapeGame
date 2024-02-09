@@ -11,6 +11,7 @@ public class TriggerBox : MonoBehaviour
     public GameObject livreOuvert;
     public GameObject livreFerme;
     public Transform PanneauCles;
+    public GameObject google;
     
     
     
@@ -54,11 +55,27 @@ public class TriggerBox : MonoBehaviour
             case "cléGauche":
                 col.transform.position = new Vector3(-17.3f, 10.15f, -30);
                 break;
+            case "ordi":
+                google.SetActive(false);
+                break;
             
             default:
                 break;
                 
         }
 
+    }
+
+
+    public void ouvrirLivre()
+    {
+        livreOuvert.SetActive(true);
+        livreFerme.SetActive(false);
+    }
+
+
+    public void afficherlettreordi()
+    {
+        google.SetActive(false);
     }
 }
