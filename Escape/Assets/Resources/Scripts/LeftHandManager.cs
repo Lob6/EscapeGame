@@ -10,40 +10,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class LeftHandManager : MonoBehaviour
 {
     private InputDevice mainDevice;
-    private bool isTriggered;
     [SerializeField]
     InputDeviceCharacteristics controllerCharacteristics;
+
+    public Book book;
 
 	// Start is called before the first frame update
 	void Start()
     {
         StartCoroutine(DetectDevice());
-        isTriggered = false;
 	}
 
     // Update is called once per frame
-    void Update()
-    {
-
-        bool triggerValue;
-        if (mainDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue && !isTriggered)
-        {
-            EventManager.TriggerEvent("manualScan");
-        }
-        if (mainDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && !triggerValue && isTriggered)
-        {
-            EventManager.TriggerEvent("manualScan");
-        }
-
-        Vector2 jsValue;
-        if(mainDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out jsValue) && jsValue != Vector2.zero)
-        {
-            EventParamRobot paramRobot = new EventParamRobot();
-            paramRobot.Value = jsValue;
-            EventManager.TriggerEvent("RobotRotate", paramRobot);
-        }
-        isTriggered = triggerValue;
-    }
 
     private IEnumerator DetectDevice()
     {
@@ -56,6 +34,22 @@ public class LeftHandManager : MonoBehaviour
                 mainDevice = devicesList[0];
             }
             yield return null;
+        }
+    }
+  
+    
+    public void OnGrab()
+    {
+        if (book.transform.parent == null)
+        {
+            book.Open();
+        }
+    }
+    public void OnUnGrabe()
+    {
+        if (book.isOpen)
+        {
+            book.Close();
         }
     }
 }

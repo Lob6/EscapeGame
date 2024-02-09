@@ -11,6 +11,8 @@ public class RightHandManager : MonoBehaviour
     private InputDevice mainDevice;
     [SerializeField]
     InputDeviceCharacteristics controllerCharacteristics;
+    
+    public Book book;
 
 	// Start is called before the first frame update
 	void Start()
@@ -29,4 +31,20 @@ public class RightHandManager : MonoBehaviour
         }
 
 	}
+    
+    
+    public void OnGrab()
+    {
+        if (book.transform.parent == null)
+        {
+            book.Open();
+        }
+    }
+    public void OnUnGrabe()
+    {
+        if (book.isOpen)
+        {
+            book.Close();
+        }
+    }
 }
