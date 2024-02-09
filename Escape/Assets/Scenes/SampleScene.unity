@@ -3989,6 +3989,8 @@ MonoBehaviour:
   livreOuvert: {fileID: 0}
   livreFerme: {fileID: 0}
   PanneauCles: {fileID: 0}
+  TexteLivre: {fileID: 0}
+  google: {fileID: 0}
 --- !u!1 &995594332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5683,6 +5685,8 @@ MonoBehaviour:
   livreOuvert: {fileID: 1422869185}
   livreFerme: {fileID: 1879751447}
   PanneauCles: {fileID: 0}
+  TexteLivre: {fileID: 0}
+  google: {fileID: 0}
 --- !u!135 &1175239427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7515,17 +7519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ab076175fcf864e9c130bc954bdad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bout1: {fileID: 1584524171}
-  bout2: {fileID: 1171953128}
-  bout3: {fileID: 1717472926}
-  bout4: {fileID: 995594336}
-  bout5: {fileID: 1648822954}
-  bout6: {fileID: 1129956912}
-  bout7: {fileID: 1054806859}
-  bout8: {fileID: 743054916}
-  bout9: {fileID: 440678294}
-  bout0: {fileID: 1615848354}
-  Erase: {fileID: 184425130}
   nbEssai: 0
   visible: {fileID: 880625944}
   panneauLettre: {fileID: 1794000034}
@@ -7864,13 +7857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48f9595e6bffa44fa1a787325a3c84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lettre1: {fileID: 1072238916}
-  lettre2: {fileID: 315961585}
-  lettre3: {fileID: 646667792}
-  lettre4: {fileID: 1528651237}
-  lettre5: {fileID: 1811028805}
+  lettres: []
   panneauFin: {fileID: 1794000034}
   panneauInput: {fileID: 1960365968}
+  keyBoard: {fileID: 0}
 --- !u!1 &1859282949
 GameObject:
   m_ObjectHideFlags: 0
